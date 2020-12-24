@@ -1,0 +1,182 @@
+aside {
+	overflow: auto;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    background: #DCDCDC;  
+    
+    &.locked {
+        pointer-events: none;
+    }
+
+	.bid-attuale {
+		@include font-title;
+		font-size: 25px;
+		color: red;
+    }
+
+    .in-asta {
+        @include font-regular;
+    }
+
+    .clients-container {
+        position: relative;
+        padding-bottom: 10px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            width: 100%;
+            background: black;
+            height: 2px;
+        }
+    }
+    
+    .clients-count-title,
+    .clients-count {
+        @include font-regular;
+        font-size: 10px;
+    }
+
+	.miglior-offerente {
+		@include font-regular;
+    }
+    
+    .timer {
+        @include font-title;
+        font-size: 20px;
+        color: black;
+        transition: color 250ms ease-in-out;
+
+        &.starting {
+            color: limegreen;
+        }
+
+        &.ending {
+            color: red;
+        }
+    }
+
+	.bid {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: oldlace;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		border: 2px solid red;
+    }
+    
+    *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+      }
+}
+
+.miglior-offerente {
+    @include font-title-small;
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    text-transform: uppercase;
+
+    &.winner {
+        background-color: brown;
+    }
+}
+
+.calciatore-attuale {
+    @include font-title;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+.asta-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comandi-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.timer-restart,
+.timer-playpause {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+    outline: inherit;
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.timer-playpause-img {
+    margin-bottom: 10px;
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 28px;
+  
+    border-color: transparent transparent transparent #202020;
+    transition: 100ms all ease;
+    cursor: pointer;
+  
+    // play state
+    border-style: solid;
+    border-width: 14px 0 14px 24px;
+  
+    &.paused {
+      border-style: double;
+      border-width: 0px 0 0px 24px;
+    }
+  
+    &:hover {
+      border-color: transparent transparent transparent #404040;
+    }
+}
+
+.reset-all,
+.random-player {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #f6b93b;
+    padding: 5px;
+    border: 2px solid #f6b93b;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    margin: 5px 0;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+@media (min-width: $breakpoint-tablet) {
+    aside {
+        width: 120px;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    aside {
+        width: 180px;
+    }
+}

@@ -1,0 +1,52 @@
+@import "utils/variables.scss";
+@import "utils/fonts.scss";
+@import "partials/main.scss";
+@import "partials/aside.scss";
+
+body {
+	display: flex;
+	justify-content: space-between;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.rilancio {
+	@include font-regular;
+	font-size: 20px;
+	width: 70px;
+}
+
+ul {
+	padding: 0;
+}
+
+button {
+	@include font-title;
+	font-size: 20px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+h1 {
+	@include font-title;
+}
+
+.lockScroll {
+	position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    -webkit-overflow-scrolling: touch;
+    height: 100vh;
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .lockScroll {
+        overflow: hidden;
+    }
+}

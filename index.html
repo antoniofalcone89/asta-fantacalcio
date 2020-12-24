@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script>
+      var socket = io();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asta Fantacalcio</title>
+</head>
+
+<body>
+  <main>
+    <div class="overlay"></div>
+    <div class="get-giocatore-layer layer">
+      <div class="buttons-container">
+          <button class="random-p random-portiere">portiere</button>
+          <button class="random-p random-difensore">difensore</button>
+          <button class="random-p random-centrocampista">centrocampista</button>
+          <button class="random-p random-attaccante">attaccante</button>
+      </div>
+      <div class="result">
+        random
+      </div>
+      <div class="closeButton">
+          <div class="close"></div>
+      </div>
+    </div>
+    <div class="liste-layer layer">
+      <button class="plus-button"></button>
+      <div class="lista-container">
+        <ul>
+          
+        </ul>
+      </div>
+      <div class="closeButton">
+        <div class="close"></div>
+      </div>
+    </div>
+  </main>
+
+  <aside class="spalla-destra">
+      <div class="clients-container">
+          <span class="clients-count-title">online:</span><span class="clients-count"></span>
+      </div>
+      <button class="reset-all">reset</button>
+      <button class="random-player">random</button>
+    <div class="calciatore-attuale" contenteditable>calciatore</div>
+    <div class="bid">
+      <span class="bid-attuale"></span>
+    </div>
+    <div class="asta-status">
+      <p class="miglior-offerente"></p>
+      <p class="timer">TIMER</p>
+      <div class="comandi-timer">
+        <button class="timer-playpause">START</button>
+      </div>
+    </div>
+    <div class="giocatori-asta">
+      <span class="title">In asta:</span>
+      <ul>
+      </ul>
+    </div>
+  </aside>
+</body>
+
+</html>
